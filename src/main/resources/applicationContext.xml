@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--声明组件扫描器(component-scan):指定注解所在的包名
+        组建就是java对象
+        base-package：指定注解在你的项目中的包名
+        component-scan工作方式：spring会扫描遍历base-package指定的包，
+            把包中和子包中的所有类，找到类中的注解，按照注解的功能创建对象，或给属性赋值。
+
+        加入了component-scan标签，配置文件的变化：
+            1.加入了一个新的约束文件spring-context.xsd
+            2.给这个新的约束文件起个命名空间的名称
+     -->
+
+    <!--声明组件扫描器(component-scan):指定注解所在的包名 -->
+<!--    <context:component-scan base-package="com.hz.spring.beans"/>-->
+<!--    声明组件扫描器：指定多个包的三种方法-->
+<!--    法一:将两个包各声明一次 -->
+<!--    <context:component-scan base-package="com.hz.spring.beans"/>-->
+<!--    <context:component-scan base-package="com.hz.spring.vo"/>-->
+<!--    法二:指定base-package的值使用分隔符-->
+<!--        逗号-->
+<!--    <context:component-scan base-package="com.hz.spring.beans,com.hz.spring.vo"/>-->
+<!--        分号-->
+    <context:component-scan base-package="com.hz.spring.an01;com.hz.spring.an02"/>
+<!--    法三:base-package指定到父包名-->
+<!--    <context:component-scan base-package="com.hz.spring"/>-->
+<!--        或者直接指定到最高级,但不建议-->
+<!--    <context:component-scan base-package="com"/>-->
+</beans>
+
