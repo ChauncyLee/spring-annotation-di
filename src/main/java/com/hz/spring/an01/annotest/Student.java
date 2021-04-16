@@ -1,4 +1,4 @@
-package com.hz.spring.an01;
+package com.hz.spring.an01.annotest;
 
 import org.springframework.stereotype.Component;
 
@@ -10,14 +10,21 @@ import org.springframework.stereotype.Component;
  *
  * @Component(value = "myStudent")等同于
  * <bean id="myStudent" class="com.hz.spring.an01.Student"/>
+ *
+ * 若@Component不指定value的属性值，则bean的id是类名的首字母小写。
  */
+/**
+ * @author Chuncy
+ * @version V1.0
+ * @Date: 2021/4/16 9:49
+ **/
 @Component(value = "myStudent")
 public class Student {
     private String name;
     private Integer age;
 
     public Student(){
-        System.out.println("==Student无参数构造方法==");
+        System.out.println("==Student无参数构造方法01==");
     }
 
 
